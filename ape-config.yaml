@@ -1,0 +1,41 @@
+name: ethigation
+dependencies:
+  - name: OpenZeppelin
+    github: OpenZeppelin/openzeppelin-contracts
+    version: 4.4.2
+
+plugins:
+  - name: solidity
+    version: 0.6.11
+  - name: alchemy
+  - name: ens
+  - name: etherscan
+  - name: ganache
+  - name: polygon
+
+default_ecosystem: ethereum
+
+ethereum:
+  local:
+    default_provider: ganache
+  mainnet:
+    default_provider: alchemy
+
+polygon:
+  local:
+    default_provider: ganache
+  mumbai:
+    default_provider: alchemy
+
+ganache:
+  server:
+    port: 7545
+  # fork:
+  #   ethereum:
+  #     sepolia:
+  #       upstream_provider: 
+  #       - alchemy
+
+test:
+  mnemonic: test test test test test test test test test test test junk
+  number_of_accounts: 5
